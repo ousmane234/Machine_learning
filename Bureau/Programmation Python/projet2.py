@@ -1,3 +1,11 @@
+########################################################           PRESENTATION              ################################
+###############  NOM: LO
+###############  PRENOM: OUSMANE
+###############  NOM DE L'ENSEIGNANT: MOUSSA NDIAYE
+###############  COURS: PROGRAMMATION PYTHON
+###############  FORMATION : SECURITE DES SYSTEMES EMBARQUES
+#################################################################################################################################
+						################ CODE SOURCE DU PROJET  ###################
 from datetime import datetime 
 # Fonction permettant d'afficher une facture (facture forfait internet ou  forfait télé)
 # comme l'id du forfait identifie de façon unique un forfait . Il est donc possible d'utiliser une fonction permettant de creer un facture et l'adapter en fonctionn du service  et du forfait
@@ -23,7 +31,7 @@ def afficher_facture(id_forfait ,forfait , nom = "" , prenom= "" , numero="" ,ad
 	print("-".ljust(85,"-"))
 	print(forfait["description"].ljust(70 ," "),forfait["prix"],"CFA")
 	print("Sous totale ".ljust(70, " "),sous_totale ,"CFA")
-	print("Montant TVA ".ljust(70, " "),tva ,"CFA")
+	print("Montant TVA ".ljust(70, " "),tva,"CFA")
 	print("Montant totale ".ljust(70, " "),montant_total,"CFA")
 	print("-".ljust(85 , "-"))
 	print("Merci de  votre confiance\n".ljust(40, " "))
@@ -52,15 +60,15 @@ while True:
 		"500":{"description": "internet fibre hybride 500" , "prix": 20500}
 	}
 	forfaits_tele = { # forfaits tele : description et prix de chaque forfait !
-		"B":{"description":"Forfait Bien -choix 15 chaines à la carte" , "prix":4900},
+		"B":{"description":"Forfait Bien -choix 15 chaines à la carte" , "prix": 4900},
 		"T":{"description":"Forfait Tres Bien - choix de 25 chaines à la carte", "prix": 8400},
 		"E":{"description" : "Forfait excellent - choix de 35 chaines à la carte" , "prix": 12500}
 	}
 	if option ==1: # achat d'un forfait
-		nom = input("Entrer le nom de l'abonné") 
-		prenom = input("Entrer le prenom de l'abonné")
-		numero = input("Entrer le numéro de l'abonné")
-		adresse = input("Entrer l'adresse de l'abonné")
+		nom = input("Entrer le nom de l'abonné:   ") 
+		prenom = input("Entrer le prenom de l'abonné:  ")
+		numero = input("Entrer le numéro de l'abonné:  ")
+		adresse = input("Entrer l'adresse de l'abonné:  ")
 		
 		while True :
 			service = int(input("Entrer les numéro des services \n(1 = Internet , 2 = Télé , 3 = Internet et Télé) :" ) )
@@ -71,7 +79,7 @@ while True:
 				break  # sinon :  on continue les traitement
 		if service == 1 : # l'utilisateur veut un forfati  internet !!
 			while True :
-				id_forfait = input("Entrer l'identifiant du forfait (50 , 150 ,100)")
+				id_forfait = input("Entrer l'identifiant du forfait (50 , 150 ,500) : "  )
 				if id_forfait not in forfaits_internet.keys():
 					print("numéro de forfait invalide :\n")
 					continue
@@ -86,7 +94,7 @@ while True:
 				
 		elif service == 2: # l'utilisateur veut un forfait tele !!
 			while True:
-				id_forfait = input("Entrer  l'identifiant du forfait \n\t>> B = Forfait bien -choix de 15 chaine à la carte ,\n\t>> T = Forfait Trés Bine -choix de 25 chaine à la carte\n\t>> E = Excellent -choix de 35 chaine à la carte)\n")
+				id_forfait = input("Entrer  l'identifiant du forfait \n\t>> B = Forfait bien -choix de 15 chaine à la carte ,\n\t>> T = Forfait Trés Bine -choix de 25 chaine à la carte\n\t>> E = Excellent -choix de 35 chaine à la carte)  : ")
 				if id_forfait not in forfaits_tele.keys():
 					print("Le numero  forfait est invalide\n")
 					continue
@@ -98,8 +106,8 @@ while True:
 					break	
 		else: # service 3 ( internet +  tele)
 			while True :
-				id_forfait_internet = input("Entrer l'identifiant du  forfait innternet : (50 ,150 ,500)")
-				id_forfait_tele = input("Entrer  l'identifiant du forait  tele (B ,T , E)")
+				id_forfait_internet = input("Entrer l'identifiant du  forfait innternet  (50 ,150 ,500) : ")
+				id_forfait_tele = input("Entrer  l'identifiant du forait  tele (B ,T , E) : ")
 				if id_forfait_internet not in forfaits_internet.keys() or id_forfait_tele not in forfaits_tele.keys():
 					print("numéro du forfait internet ou télé invalide \n")
 					continue 
@@ -141,13 +149,3 @@ while True:
 
 
 	
-		
-			
-
-
-
-
-		
-	
-
-
